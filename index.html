@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="icon" href="resources/icon2.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilo.css"/>
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/responsive.css">
+  </head>
+  <body>
+
+    
+    <div class="overlay quite" id="overlay"></div>
+    
+
+    <nav class="nav">
+        <ul class="navElements">
+            <li>
+                <img src="resources/logo.png" alt="" class="logo">
+            </li>
+            <li class="menu">
+                <button class="a button" id="agregar">Agregar</button>
+                <button class="a button" id="tareas">Tareas</button>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section class="insert-data" id="insert-data">
+            <form class="form">
+                
+                <legend style="text-align: center; width: 100%;">
+                    <img src="resources/list.png" alt="" class="legend">
+                </legend>
+              <h2>Completa la información.</h2>
+              <label for="name">Título:</label>
+              <input type="text" id="title" class="input" autocomplete="off" minlength="2" required autofocus/>
+              <label for="hora">Hora:</label>
+              <input type="datetime-local" id="time" class="input hora" required/>
+              <label for="prioridad">Prioridad:</label>
+              <article name="prioridadArticle" class="radio">
+                  <div>
+                      <input type="radio" id="alto" name="prioridad" checked>
+                      <label for="alto">Alta</label>
+                  </div>
+                  <div>
+                      <input type="radio" id="medio" name="prioridad">
+                      <label for="medio">Media</label>
+                  </div>
+                  <div>    
+                      <input type="radio" id="bajo" name="prioridad">
+                      <label for="bajo">Baja</label>
+                  </div>
+              </article>
+      
+              <label for="descripcion">Descripción:</label>
+              <textarea maxlength="" name="" id="descripcion" cols="50" rows="100" class="textarea" minlength="2" required></textarea>
+              
+              <button type="button" id="submit" class="submit button">
+                  Agregar tarea.
+              </button>
+      
+            </form>
+          </section>
+      
+          <section class="show-data quite" id="tasks">
+              <div class="header">
+                <h2>Tareas pendientes.</h2>
+                <select name="order" id="order" class="order">
+                    <option>Más importante a menos</option>
+                    <option>Menos importante a más</option>
+                    <option>Solo altas</option>
+                    <option>Solo medias</option>
+                    <option>Solo bajas</option>
+                  </select>
+                <legend>
+                    <img src="resources/list.png" alt="" class="legend2">
+                </legend>
+              </div>
+            <div class="tasks" id="addTask">
+                
+            </div>
+          </section>
+    </main>
+
+
+    <!--Alerts-->
+    <div class="correct quite" id="correctAlert">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+            <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+            <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
+        </svg>
+        <p class="success">Tarea agregada correctamente.</p>
+    </div>
+
+    <div class="wrong quite" id="wrongAlert">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+            <circle class="path circle" fill="none" stroke="#D06079" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+            <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="34.4" y1="37.9" x2="95.8" y2="92.3"/>
+            <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="95.8" y1="38" x2="34.4" y2="92.2"/>
+        </svg>
+        <p class="error">Error. Por favor completa todos los campos.</p>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
